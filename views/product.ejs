@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%-include('partials/navbar')  %>
+
+<body>
+
+<div class="card mx-auto" style="width: 30rem;">
+    <br>
+    <div class="text-center">
+    <h2 class="card-title">Product Details</h2>
+    <br>
+    <% if (product) { %> <!-- Check if product data exists -->
+        <div class="card-text">
+            <p><b>Product Name:</b><br> <%= product.name %></p>
+            <p><b>Product Image:</b><br> <img src = "/images/<%= product.image %>" width="20%"></p>
+            <p><b>Product Description:</b><br> <%= product.description %></p>
+            <p><b>Price:</b><br> $<%= product.price %></p> 
+            <p><b>Product Stock:</b><br> <%= product.stock %></p>
+            <br>
+        </div>
+    <% } else { %>
+        <p>No product found.</p>
+    <% } %>
+    <a href ="/" class="btn btn-primary">Back</a><br><br>
+</div>
+</div>
+</body>
+</html>

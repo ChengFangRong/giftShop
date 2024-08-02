@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/navbar') %>
+
+
+    <body>
+        <div class="container">
+            <br>
+            <div class="text-center">
+                <h2>Update Product</h2>
+            </div>
+            <br>
+            <div class="text-center">
+                <% if (product) { %>
+                    <form action="/editProduct/<%= product.productId %>" method="POST" enctype="multipart/form-data">
+                        <label for="name">Product Name:</label><br>
+                        <input type="text" id="name" name="name" value="<%= product.name %>" required><br><br>
+
+                        <label for="description">Description:</label><br>
+                        <input type="text" id="description" name="description" value="<%= product.description %>" required><br><br>
+
+                        <label for="price">Price:</label><br>
+                        <input type="number" id="price" name="price" min="0" step="0.01" value="<%= product.price %>" required><br><br>
+
+                        <label for="stock">Stock:</label><br>
+                        <input type="number" id="stock" name="stock" min="0" step="1" value="<%= product.stock %>" required><br><br>
+
+                        <label for="category">Product category:</label><br>
+                        <input type="text" id="category" name="category" value="<%= product.category %>" required><br><br>
+
+                        <label for="image">Image:</label><br>
+                        <input type="text" name="currentImage" value=<%=product.image %>><br>
+                        <img src="/images/<%= product.image %>" width="20%"><br><br>
+
+                        New Image:<br> <input type="file" id="image" name="image" accept="image/*"
+                            value=<%=product.image %>>
+
+
+                        <br><br>
+
+                        <button type="submit">Update Product</button>
+                    </form>
+                    <% } else { %>
+                        <p>No product found.</p>
+                        <% } %>
+                            <br>
+                            <a href="/"><button type="button" class="btn btn-secondary">Back</button></a>
+                            <br><br>
+            </div>
+        </div>
+    </body>
+
+</html>

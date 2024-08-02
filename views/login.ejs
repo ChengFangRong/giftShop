@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%-include('partials/navbar')  %>
+
+
+<body>
+    <div class="container">
+
+        <style>
+            body {
+                background-image: url('/images/bg orange.jpg');
+
+            }
+        </style>
+
+        <br><br>
+
+        <div class="card mx-auto" style="width: 25rem;">
+        <div class="text-center"><br><br>
+            <h2 class="card-title">Account</h2>
+        </div>
+        <br>
+        
+        <div class="text-center" class="card-text">
+            
+                <form action="/login" method="GET" enctype="multipart/form-data">
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" required><br><br>
+                    
+                    <label for="password">Password:</label><br>
+                    <input type="text" id="password" name="password" required><br><br>
+
+                    <button type="submit" class="btn btn-primary">Sign in</button><br><br>
+                    <p>Dont have an account?<a href="/register" class="btn btn-link">Register Now</a><br></p>
+                    <a href="/featured" class="btn btn-link">Back to home</a>
+                    <br><br><br>
+        </div></div></div>
+
+    </div>
+    </div>
+
+    
+
+
+</body>
+
+</html>
+
+

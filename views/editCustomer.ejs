@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/navbar') %>
+
+
+    <body>
+        <div class="container">
+            <br>
+            <div class="text-center">
+                <h2>Update Customers</h2>
+            </div>
+            <br>
+            <div class="text-center">
+                <% if (customer) { %>
+                    <form action="/editCustomers/<%= customer.customerId %>" method="POST" enctype="multipart/form-data">
+                        <label for="name">Customers Name:</label><br>
+                        <input type="text" id="name" name="name" value="<%= customer.name %>" required><br><br>
+
+                        <label for="email">Email:</label><br>
+                        <input type="text" id="email" name="email" value="<%= customer.email %>" required><br><br>
+
+                        <label for="gameId">UID:</label><br>
+                        <input type="number" id="gameId" name="gameId" value="<%= customer.gameId %>"><br><br>
+
+                        <label for="password">Password:</label><br>
+                        <input type="number" id="password" name="password" value="<%= customer.password %>"required><br><br>
+
+                        <br><br>
+
+                        <button type="submit">Update Product</button>
+                    </form>
+                    <% } else { %>
+                        <p>No product found.</p>
+                        <% } %>
+                            <br>
+                            <a href="/"><button type="button" class="btn btn-primary">Back</button></a>
+                            <br><br>
+            </div>
+        </div>
+    </body>
+
+</html>
